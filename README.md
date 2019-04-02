@@ -18,6 +18,9 @@ For example:
     reader.disconnect()
 
 The `write()` function only accepts integers with a length less than 10 digits and returns `True` or `False` if the data was written correctly.
+
 The `read()` function returns `False` if anything failed during the reading or an `str()` variable containing the data of the tag.
+
 Use `bleep()` to get a feedback in case you want to know physically if everything is correct.
+
 And remember to use the `disconnect()` function when you have finalised using the port to avoid issues.
