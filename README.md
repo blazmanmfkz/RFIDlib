@@ -1,7 +1,9 @@
 # RFIDlib
 This is a simple python library to read and write RFID tags from a Prolific TA2303 rfid writer.
-It works extremely simple.
 
+First, you need to have the `pyserial` library.
+
+Then, it works extremely simple.
 You only need to instantiate a `RfidDevice()` and use the `read()` and `write()` built-in methods.
 
 For example:
