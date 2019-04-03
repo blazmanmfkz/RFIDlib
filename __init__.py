@@ -58,15 +58,14 @@ class RfidDevice(object):
 			self.device.flushInput()
 			self.device.flushOutput()
 			self.device.write(serial.to_bytes(self.readcommand))
-			response = self.device.readline()
+			response = self.device.read(13)
 			if len(response) < 10:
 				return(False)
 			else:
-				if len(response) == 12:
-					response = str((response[7:]).hex())
-				elif len(response) == 13:
-					response = str((response[6:-1]).hex())
+				if len(response) == 13:
+					response = str((response[7:-1]).hex())
 				newdata = str((int(response, 16)))
+
 				return(newdata)
 		else:
 			raise Exception('You must initialise the device in order to read or write data.')
